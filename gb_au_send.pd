@@ -1,0 +1,19 @@
+#N canvas 765 180 450 300 10;
+#X declare -lib mrpeach;
+#X obj 48 44 import mrpeach;
+#X msg 54 77 connect localhost 9001;
+#X msg 114 105 disconnect;
+#X obj 90 234 udpsend;
+#X obj 247 130 pack 0;
+#X obj 248 79 hsl 128 15 0 100 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 247 103 / 100;
+#X obj 196 200 packOSC;
+#X msg 242 164 send /garageband/volume \$1;
+#X connect 1 0 3 0;
+#X connect 2 0 3 0;
+#X connect 4 0 8 0;
+#X connect 5 0 6 0;
+#X connect 6 0 4 0;
+#X connect 7 0 3 0;
+#X connect 8 0 7 0;
